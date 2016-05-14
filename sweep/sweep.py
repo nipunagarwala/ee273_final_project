@@ -1,5 +1,4 @@
 import os, sys
-import numpy
 
 widths    = [0.5, 1.5]
 gaps      = [0.5]
