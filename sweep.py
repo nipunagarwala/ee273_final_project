@@ -1,7 +1,7 @@
 import os, sys
 
-widths    = [0.1, 2]
-gaps      = [0.1, 2]
+widths    = [0.5, 1.5]
+gaps      = [0.5]
 laminates = [(31.5, 3.89, 0.006)]
 pre_pregs  = [(2, 3.19, 0.007)]
 
@@ -49,6 +49,7 @@ for width in widths:
           text = '\n'.join(lines)
           sp_file.seek(0)
           sp_file.write(text)
+          sp_file.close()
 
           # Run HSPICE
           os.system('./sweep.sh')
@@ -56,4 +57,3 @@ for width in widths:
           # Copy to filename
           sp_name = str(width) + '_' + str(gap) + '_' + str(l_t) + '_' + str(p_t) + '.rlgc'
           os.system('mv diff_stripline.rlgc ' + sp_name)
-          sp_file.close()
