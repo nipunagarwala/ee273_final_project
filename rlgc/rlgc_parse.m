@@ -2,7 +2,7 @@ files = dir('./rlgc_files/*.rlgc');
 param_names = {'Lo' 'Co' 'Ro' 'Go' 'Rs' 'Gd'};
 param_num = numel(param_names);
 
-file_num = numel(files);
+file_num = numel(files)
 param_values = zeros(file_num,param_num,3);
 % Zo, Zoo, Zoe, kc, kl, Kb, Kf, vo, ve
 out = zeros(file_num,9);
@@ -44,6 +44,32 @@ for file = files'
     i = i + 1;
 end
 
-%%
+Rdc = param_values(:,3,1);
+Rs = param_values(:,5,1);
+f = 10*10^9;
+Gd = param_values(:,6,1);
+R = Rdc+Rs*sqrt(f);
+G = Gd*f;
+Zo= out(:,1);
+ar = R./(2*Zo);
+ad = G.*Zo/2;
+
+atten = log10(exp(-(ar+ad)))*20/39.6;
+Kbs = out(:,6);
+sums = inputs(:,1)*2+inputs(:,2);
+
+
+kb_thresh = 0.05;
+
+width_col = inputs(:,1) + inputs(:,2);
+backCross_col = out(:,6) > kb_thresh;
+aug_input = [inputs width_col backCross_col out(:,6) -atten];
+
+sort_input = sortrows(aug_input, [6,5, 8, 7]);
+
+min_widths = dataset({sort_input 'Width','Gap','Width+Gap','Laminate','Pre-preg', ...
+    'Is_not_kb', 'Kb', 'Attenuation'},'obsnames', {});
+
+export(min_widths)
 
 
