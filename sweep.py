@@ -15,6 +15,11 @@ for width in widths:
   for gap in gaps:
     for (l_t,l_dk,l_df) in laminates:
       for (p_t,p_dk,p_df) in pre_pregs:
+        print("\n============================================")
+        print("SWEEP width={}, gap={}, L={}, P={}".format(
+          width, gap, (l_t,l_dk,l_df), (p_t,p_dk,p_df) ))
+        print("============================================\n")
+
         with open(sp_path, "r+") as sp_file:
 
           # Read text
@@ -48,11 +53,15 @@ for width in widths:
           
           # Replace new tex
           text = '\n'.join(lines)
-          sp_file.seek(0)
+          sp_file.close()
+
+        with open(sp_path, "w") as sp_file:
           sp_file.write(text)
           sp_file.close()
 
           # Run HSPICE
+          if os.path.isfile('out'):
+              os.system('rm out')
           os.system('./sweep.sh')
 
           # Copy to filename
