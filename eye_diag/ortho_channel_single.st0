@@ -1,0 +1,13 @@
+***** HSPICE -- I-2013.12-SP2 64-BIT (May 27 2014) RHEL64 ******
+ Input File: ../ortho_channel_single.sp
+ lic:
+ lic: FLEXlm: v10.9.8
+ lic: USER:   nipuna1              HOSTNAME: corn03.stanford.edu
+ lic: HOSTID: b82a72de68a5         PID:      39577
+ lic: Using FLEXlm license file:
+ lic: 27000@cadlic0
+ lic: Checkout 1 hspice
+ lic: License/Maintenance for hspice will expire on 16-oct-2016/2015.06
+ lic: 2(in_use)/150(total) FLOATING license(s) on SERVER 27000@cadlic0
+ lic:
+ lic: Release hspice token(s)
