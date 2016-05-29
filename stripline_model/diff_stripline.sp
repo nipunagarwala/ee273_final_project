@@ -2,19 +2,19 @@
 * Material: XXX, RTF copper foil
  
 ************************************************************************* 
- .PARAM thick	= 0.6		* Trace thickness, mils -- 1/2 oz copper
- .PARAM width	= 4.0		* Trace width, mils
- .PARAM space	= 4.0		* Trace pair air gap, mils
- .PARAM etch	= 0.0		* Trace etch factor, mils
- .PARAM rrms	= 4u		* RMS trace roughness, meters
- .PARAM core	= 3.5		* Core dielectric thickness, mils  (2x1035)
- .PARAM preg	= 3.3		* Pre-preg dielectric thickness, mils  (2x1035)
- .PARAM dk_core	= 3.28		* Core relative dielectric constant 
- .PARAM dk_preg	= 3.28		* Pre-preg relative dielectric constant
- .PARAM df_core	= 0.006		* Core dissipation factor
- .PARAM df_preg	= 0.006		* Pre-preg dissipation factor
- .PARAM length	= 9.38		* Trace length, inches
- .PARAM Zo_diff	= 100		* Differential impedance, ohms
+.PARAM thick = 0.6 * Trace thickness, mils -- 1/2 oz copper
+.PARAM width = 3.0 * Trace width, mils
+.PARAM space = 6.0 * Trace pair air gap, mils
+.PARAM etch = 0.0 * Trace etch factor, mils
+.PARAM rrms = 4u * RMS trace roughness, meters
+.PARAM core = 7.0 * Core dielectric thickness, mils (2x1035)
+.PARAM preg = 4.9 * Pre-preg dielectric thickness, mils (2x1035)
+.PARAM dk_core = 3.63 * Core relative dielectric constant
+.PARAM dk_preg = 3.57 * Pre-preg relative dielectric constant
+.PARAM df_core = 0.0015 * Core dissipation factor
+.PARAM df_preg = 0.0015 * Pre-preg dissipation factor
+.PARAM length = 10.0 * Trace length, inches
+.PARAM Zo_diff = 100 * Differential impedance, ohms
 ************************************************************************* 
 
 *Vs 1 2 AC 2
@@ -49,5 +49,8 @@
  
  .OPTION POST=1 ACCURATE
  .AC DEC 100 1meg 40G
+ .END
+
+.AC DEC 100 1meg 40G
  .END
 
