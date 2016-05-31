@@ -22,18 +22,18 @@
 
 * CTLE Settings *
 *.PARAM az1     = 3.125g        * CTLE zero frequency, Hz
- .PARAM az1     = 5g            * CTLE zero frequency, Hz
+ .PARAM az1     = 3g            * CTLE zero frequency, Hz
 *.PARAM ap1     = 3.125g        * CTLE primary pole frequency, Hz
  .PARAM ap1     = 5g            * CTLE primary pole frequency, Hz
  .PARAM ap2     = 10g           * CTLE secondary pole frequency, Hz
 
 * Driver Pre-emphais *
- .PARAM pre1	=  0.00		* Driver pre-cursor pre-emphasis
- .PARAM post1	=  0.00		* Driver 1st post-cursor pre-emphasis
- .PARAM post2	=  0.00		* Driver 2nd post-cursor pre-emphasis
+ .PARAM pre1	=  0.0004		* Driver pre-cursor pre-emphasis
+ .PARAM post1	=  0.1653		* Driver 1st post-cursor pre-emphasis
+ .PARAM post2	=  0.0201		* Driver 2nd post-cursor pre-emphasis
 
 * PCB Line Lengths *
- .PARAM len1	= 9.38		* Line segment 1 length, inches
+ .PARAM len1	= 12		* Line segment 1 length, inches
  .PARAM len2	= 0.25		* Line segment 2 length, inches
  .PARAM len3	= 9.38		* Line segment 3 length, inches
  .PARAM len4	= 1		* Line segment 4 length, inches
@@ -57,7 +57,7 @@
  .TRAN 5p simtime *SWEEP DATA=plens
  .DATA	plens
 +       az1     ap1     ap2	pre1	post2
-*+	3.125g	3.125g	10g	0.0	0.0
++	3.125g	3.125g	10g	0.0	0.0
 +	5g	5g	10g	0.0	0.0
  .ENDDATA
 
@@ -103,20 +103,20 @@
 
  Xvp2    jp3   jp4     (via) zvia=40			* Daughter card via
  Xvn2    jn3   jn4     (via) zvia=40			* Daughter card via
- Xk1 jp4 jn4   jp5 jn5 (xconn)				* Xcede+ connector
+Xk1 jp4 jn4   jp5 jn5 (xconn)				* Xcede+ connector
 *Xkp1 0  jp4   jp5     (conn)				* Backplane connector
 *Xkn1 0  jn4   jn5     (conn) 				* Backplane connector
- Xvp3    jp5   jp6     (mvia)				* Backplane via
- Xvn3    jn5   jn6     (mvia)				* Backplane via
+Xvp3    jp5   jp6     (mvia)				* Backplane via
+Xvn3    jn5   jn6     (mvia)				* Backplane via
 
  Tmpp    jp6 0 jp7 9   Z0=50 TD='len2*170p'		* Midplane seg 2-P
  Tmpn    jn6 0 jn7 9   Z0=50 TD='len2*170p'		* Midplane seg 2-N
 
  Xvp4    jp7   jp8     (mvia) 				* Backplane via
  Xvn4    jn7   jn8     (mvia) 				* Backplane via
- Xk2 jp9 jn9   jp8 jn8 (xconn)
-*Xkp2 0  jp9   jp8     (conn)				* Backplane connector
-*Xkn2 0  jn9   jn8     (conn)				* Backplane connector
+Xk2 jp9 jn9   jp8 jn8 (xconn)
+*Xkp2 0  jp7   jp8     (conn)				* Backplane connector
+*Xkn2 0  jn7   jn8     (conn)				* Backplane connector
  Xvp5    jp9   jp10    (via) zvia=40			* Daughter card via
  Xvn5    jn9   jn10    (via) zvia=40			* Daughter card via
 
@@ -155,7 +155,7 @@
 *                                                                       *
 *************************************************************************
 
- .INCLUDE './diff_stripline.rlgc'
+ .INCLUDE '../stripline_model/diff_stripline.rlgc '
  .INCLUDE './prbs7.inc'
  .INCLUDE './tx_4tap_diff.inc'
  .INCLUDE './rx_eq_diff.inc'

@@ -1,0 +1,65 @@
+* "simulator" "HSPICE" 
+* "version" "I-2013.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "16:50:27 05/29/2016 "
+* "netlist" "ortho_channel_data_eye_prbs7.sp "
+* "runtitle" "* reference orthogonal midplane channel -- prbs7 data eye *"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ 9 = -40.1155u       
++ eye =   0.            
++ in =  24.9997n       
++ inn =   1.0000        
++ inp =   0.            
++ jn1 =-105.7243m       
++ jn10 = -97.5144m       
++ jn11 = -91.0723m       
++ jn12 = -91.0723m       
++ jn13 = -90.3859m       
++ jn14 = -90.3859m       
++ jn2 =-105.7243m       
++ jn3 = -97.4743m       
++ jn4 = -97.4743m       
++ jn5 = -97.4743m       
++ jn6 = -97.4743m       
++ jn7 = -97.5144m       
++ jn8 = -97.5144m       
++ jn9 = -97.5144m       
++ jp1 = 105.7243m       
++ jp10 =  97.4342m       
++ jp11 =  90.9974m       
++ jp12 =  90.9974m       
++ jp13 =  90.3115m       
++ jp14 =  90.3115m       
++ jp2 = 105.7243m       
++ jp3 =  97.4743m       
++ jp4 =  97.4743m       
++ jp5 =  97.4743m       
++ jp6 =  97.4743m       
++ jp7 =  97.4342m       
++ jp8 =  97.4342m       
++ jp9 =  97.4342m       
++ jrn = -90.3859m       
++ jrp =  90.3115m       
++ npad =-105.7243m       
++ outn = -90.3859m       
++ outp =  90.3115m       
++ ppad = 105.7243m       
++ rx_diff = 180.6974m       
++ xf.n1 =   2.2500p       
++ xf.n2 =  24.7500p       
++ xf.n3 = 249.7500p       
++ xf.n4 =   2.4997n       
++ xd.1 = 500.0000m       
++ xd.2 =-500.0000m       
++ xd.3 =-500.0000m       
++ xd.4 =-500.0000m       
++ xvp3.2 =  97.4743m       
++ xvn3.2 = -97.4743m       
++ xvp4.2 =  97.4342m       
++ xvn4.2 = -97.5144m       
+***   END: Saved Operating Point ***                     

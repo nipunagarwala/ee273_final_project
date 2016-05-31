@@ -1,0 +1,40 @@
+Mdi:ArrangeIcons
+Mdi:Resize 704 525
+Mdi:Move 5 5
+ScopeSigMgr:loadpffile /afs/ir.stanford.edu/users/n/i/nipuna1/ee273/ee273_final_project/spice/s_param_compare.ac0 1 openonly
+# PF:1
+pf:read PF:1 v(sp1)
+# WF:1:1
+Graph addsignal {WF:1:1 WF:1:1} -region {new new} -yview {cphasedeg(y) db(y)} -xview {real(x) real(x)} -tracehi {2 2}
+# Signal0 Signal1
+wm geometry .sigmgr._PF:1 231x341+1293+774
+wm geometry .sigmgr._PF:1 231x341+684+320
+wm geometry .sigmgr._PF:1 231x341+715+281
+wm geometry .sigmgr._PF:1 231x341+738+257
+wm geometry .sigmgr._PF:1 231x341+755+239
+wm geometry .sigmgr._PF:1 231x341+766+229
+wm geometry .sigmgr._PF:1 231x341+775+222
+wm geometry .sigmgr._PF:1 231x341+778+219
+wm geometry .sigmgr._PF:1 231x341+779+219
+wm geometry .sigmgr._PF:1 231x341+780+219
+.frame1.mdi.mdi1.work.graph0 save -file /afs/ir.stanford.edu/users/n/i/nipuna1/ee273/ee273_final_project/spice/short_s11Params.png -format png  -x 0 -y 0 -w 702 -h 521 -colormode color
+ScopeSigMgr:loadpffile /afs/ir.stanford.edu/users/n/i/nipuna1/ee273/ee273_final_project/spice/s_param_compare.ac0 1 openonly
+# PF:2
+wm geometry .sigmgr._PF:2 231x341+1340+845
+wm geometry .sigmgr._PF:2 231x341+670+360
+wm geometry .sigmgr._PF:2 231x341+670+330
+wm geometry .sigmgr._PF:2 231x341+670+310
+wm geometry .sigmgr._PF:2 231x341+670+288
+wm geometry .sigmgr._PF:2 231x341+670+278
+wm geometry .sigmgr._PF:2 231x341+670+269
+wm geometry .sigmgr._PF:2 231x341+670+263
+wm geometry .sigmgr._PF:2 231x341+670+262
+GrXY:NewGraph
+# Graph1
+pf:read PF:2 v(sp1)
+# WF:2:1
+Graph addsignal {WF:2:1 WF:2:1} -region {new new} -yview {cphasedeg(y) db(y)} -xview {real(x) real(x)} -tracehi {2 2}
+# Signal0 Signal1
+Mdi:Resize 678 532
+Mdi:Move 5 5
+.frame1.mdi.mdi2.work.graph1 save -file /afs/ir.stanford.edu/users/n/i/nipuna1/ee273/ee273_final_project/spice/s11_params.png -format png  -x 0 -y 0 -w 676 -h 528 -colormode color

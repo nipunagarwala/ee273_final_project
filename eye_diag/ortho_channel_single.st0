@@ -1,13 +1,68 @@
 ***** HSPICE -- I-2013.12-SP2 64-BIT (May 27 2014) RHEL64 ******
- Input File: ../ortho_channel_single.sp
+ Input File: ../spice/ortho_channel_single.sp
  lic:
  lic: FLEXlm: v10.9.8
  lic: USER:   nipuna1              HOSTNAME: corn03.stanford.edu
- lic: HOSTID: b82a72de68a5         PID:      39577
+ lic: HOSTID: b82a72de68a5         PID:      34532
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 16-oct-2016/2015.06
- lic: 2(in_use)/150(total) FLOATING license(s) on SERVER 27000@cadlic0
+ lic: 1(in_use)/150(total) FLOATING license(s) on SERVER 27000@cadlic0
  lic:
+ init: begin read circuit files,  cpu clock=  5.00E-01
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/ad
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/ad
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/behave
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/bjt
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/burr_brn
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/comlinear
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/dio
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/fet
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/lin_tech
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/pci
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/signet
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/ti
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/tline
+       option search = /usr/class/ee/synopsys/hspice/I-2013.12-SP2/hspi
+                         ce/parts/xilinx
+       option runlvl
+       option post
+       option accurate
+ init: end read circuit files,  cpu clock=  5.00E-01 peak memory=       179 mb
+ init: begin check errors,  cpu clock=  5.00E-01
+ init: end check errors,  cpu clock=  2.26E+00 peak memory=       245 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  2.26E+00
+       establish matrix -- done,  cpu clock=  2.26E+00 peak memory=       245 mb
+       re-order matrix -- done,  cpu clock=  2.26E+00 peak memory=       245 mb
+ init: end setup matrix,  cpu clock=  2.26E+00 peak memory=       245 mb
+ dcop: begin dcop,  cpu clock=  2.26E+00
+ dcop: end dcop,  cpu clock=  2.26E+00 peak memory=       245 mb  tot_iter=       4
+ output: ortho_channel_single.tr0
+ sweep: tran tran0    begin, stop_t=  9.35E-09 #sweeps=1870 cpu clock=  2.26E+00
+ tran: time= 9.3458E-10 tot_iter=     954 conv_iter=     466 cpu clock= 3.48E+00
+ tran: time= 1.8692E-09 tot_iter=    1404 conv_iter=     691 cpu clock= 4.06E+00
+ tran: time= 2.8042E-09 tot_iter=    1858 conv_iter=     918 cpu clock= 4.66E+00
+ tran: time= 3.7388E-09 tot_iter=    2296 conv_iter=    1137 cpu clock= 5.35E+00
+ tran: time= 4.6734E-09 tot_iter=    2736 conv_iter=    1357 cpu clock= 6.18E+00
+ tran: time= 5.6080E-09 tot_iter=    3180 conv_iter=    1579 cpu clock= 7.01E+00
+ tran: time= 6.5426E-09 tot_iter=    3622 conv_iter=    1800 cpu clock= 7.83E+00
+ tran: time= 7.4771E-09 tot_iter=    4066 conv_iter=    2022 cpu clock= 8.68E+00
+ tran: time= 8.4112E-09 tot_iter=    4504 conv_iter=    2241 cpu clock= 9.53E+00
+ tran: time= 9.3458E-09 tot_iter=    4938 conv_iter=    2458 cpu clock= 1.04E+01
+ sweep: tran tran0    end,  cpu clock=  1.04E+01 peak memory=       245 mb
+>info:         ***** hspice job concluded
  lic: Release hspice token(s)
